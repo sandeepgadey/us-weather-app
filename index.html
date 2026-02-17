@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>US Weather App</h1>
+            <p>Current weather for major US cities</p>
+        </header>
+
+        <main class="weather-card">
+            <div class="city-selector">
+                <label for="city-select">Select City:</label>
+                <select id="city-select">
+                    <option value="seattle">Seattle, WA</option>
+                    <option value="nyc">New York City, NY</option>
+                    <option value="la">Los Angeles, CA</option>
+                    <option value="chicago">Chicago, IL</option>
+                    <option value="houston">Houston, TX</option>
+                    <option value="phoenix">Phoenix, AZ</option>
+                    <option value="philly">Philadelphia, PA</option>
+                    <option value="san_antonio">San Antonio, TX</option>
+                    <option value="san_diego">San Diego, CA</option>
+                    <option value="dallas">Dallas, TX</option>
+                    <option value="austin">Austin, TX</option>
+                    <option value="jacksonville">Jacksonville, FL</option>
+                    <option value="fort_worth">Fort Worth, TX</option>
+                    <option value="columbus">Columbus, OH</option>
+                    <option value="charlotte">Charlotte, NC</option>
+                    <option value="san_francisco">San Francisco, CA</option>
+                    <option value="indianapolis">Indianapolis, IN</option>
+                    <option value="denver">Denver, CO</option>
+                    <option value="washington">Washington, DC</option>
+                    <option value="boston">Boston, MA</option>
+                </select>
+            </div>
+            
+            <div class="weather-info">
+                <div class="location">
+                    <h2 id="city">Seattle, WA</h2>
+                    <p id="date"></p>
+                </div>
+                
+                <div class="current-weather">
+                    <div class="temperature-section">
+                        <span class="temperature" id="temperature">--°</span>
+                        <div class="weather-details">
+                            <p class="description" id="description">Loading...</p>
+                            <p class="feels-like">Feels like <span id="feels-like">--°</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-icon">
+                        <img id="weather-icon" src="" alt="Weather icon">
+                    </div>
+                </div>
+                
+                <div class="additional-info">
+                    <div class="info-item">
+                        <span class="label">Humidity</span>
+                        <span class="value" id="humidity">--%</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Wind Speed</span>
+                        <span class="value" id="wind-speed">-- mph</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Pressure</span>
+                        <span class="value" id="pressure">-- hPa</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Visibility</span>
+                        <span class="value" id="visibility">-- miles</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="refresh-section">
+                <button id="refresh-btn" onclick="refreshWeather()">Refresh Weather</button>
+                <p class="last-updated">Last updated: <span id="last-updated">Never</span></p>
+            </div>
+            
+            <div class="error-message" id="error-message" style="display: none;">
+                <p>Unable to load weather data. Please try again later.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Weather data provided by Open-Meteo</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
